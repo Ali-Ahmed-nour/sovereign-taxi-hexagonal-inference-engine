@@ -1,0 +1,6 @@
+{
+    "reportUnusedImport": "none",
+    "reportUnusedVariable": "warning",
+    "pythonVersion": "3.10",
+    "typeCheckingMode": "basic"
+}
