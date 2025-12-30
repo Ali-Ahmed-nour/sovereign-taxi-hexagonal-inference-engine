@@ -1,0 +1,25 @@
+# Pre-commit configuration - Local Hooks (Optimized for Cloud & Resource Saving)
+repos:
+  - repo: local
+    hooks:
+      # 1. Ruff Linting: Manual check for code quality
+      - id: ruff-check
+        name: ruff-lint-check
+        entry: uv run ruff check
+        language: system
+        types_or: [python, jupyter]
+
+      # 2. Ruff Format: Automatic formatting
+      - id: ruff-format
+        name: ruff-format-auto-fix
+        entry: uv run ruff format
+        language: system
+        types_or: [python, jupyter]
+
+      # 3. Pyright: Static type checking
+      - id: pyright
+        name: pyright-local-check
+        entry: uv run pyright
+        language: system
+        types: [python]
+        pass_filenames: false
