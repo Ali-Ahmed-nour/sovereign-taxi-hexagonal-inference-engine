@@ -4,6 +4,15 @@
 
 ---
 
+## 🧪 Machine Learning & Optimization
+
+### 🚀 Model Tuning & Performance
+* **Bayesian Hyperparameter Optimization**
+    * **Hyperopt**: Integrated `Hyperopt` for automated hyperparameter tuning. Leveraged the **Tree of Parzen Estimators (TPE)** algorithm to efficiently navigate the search space, significantly reducing optimization time compared to traditional Grid or Random Search methods.
+    * **Search Space Definition**: Mastered defining complex search spaces using `hp.quniform`, `hp.loguniform`, and `hp.choice` to optimize model convergence.
+
+---
+
 ## 🛠 Software Engineering & Infrastructure
 
 ### 📦 Project & Environment Management
@@ -18,14 +27,13 @@
     * **Pre-commit Hooks**: Implemented a `pre-commit` framework to automate code quality checks before version control entry.
 
 * **Security & Dependency Analysis**
-    * **Mend (Mend Advisor)**: Integrated Mend to scan third-party dependencies for security vulnerabilities (SCA - Software Composition Analysis). Used Mend Advisor to proactively evaluate the health and security posture of open-source libraries before integration.
-    * **SonarQube for IDE**: Integrated SonarQube for real-time deep code analysis, identifying "Code Smells" and complex logic patterns.
+    * **Mend (Mend Advisor)**: Integrated Mend to scan third-party dependencies for security vulnerabilities (SCA). Used Mend Advisor to evaluate the health of open-source libraries before integration.
+    * **SonarQube for IDE**: Integrated SonarQube for real-time deep code analysis, identifying "Code Smells" and logic patterns.
 
 * **Static Analysis & Linting Ecosystem**
-    * **Ruff**: Integrated Ruff as a high-performance linter and formatter to enforce code style instantly.
-    * **Isort**: Utilized for automated import sorting to maintain PEP 8 compliance.
+    * **Ruff & Isort**: Leveraged Ruff for high-performance linting/formatting and Isort for automated import organization.
     * **Pylance & Pyright**: Leveraged for advanced static analysis and strict type-checking via `pyrightconfig.json`.
-    * **pandas-stubs**: Utilized to bring static typing to the Pandas library for stricter validation.
+    * **pandas-stubs**: Utilized to bring static typing to the Pandas library.
 
 * **Advanced Structural Typing**
     * **TypedDict**: Leveraged from the `typing` module to define explicit schemas for dictionaries, ensuring data consistency.

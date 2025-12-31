@@ -213,3 +213,7 @@ __marimo__/
 data/
 
 models/*.bin
+
+# --- MLOps & Tracking ---
+mlflow.db
+mlruns/
