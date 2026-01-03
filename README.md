@@ -72,3 +72,32 @@ To maintain high engineering standards, the project follows a structured lifecyc
 
 ---
 > **Note:** > **🚧 Project Status & Current Focus:** > This project is undergoing a major architectural refactor to implement **Hexagonal Architecture**.
+
+### 🧩 Domain Model Visualized
+This diagram represents our core business logic (The Hexagon Center), ensuring that our ML entities are decoupled from infrastructure.
+
+```mermaid
+classDiagram
+    direction LR
+    class TaxiTrip {
+        +String trip_id
+        +datetime pickup_time
+        +datetime dropoff_time
+        +Location pickup_loc
+        +Location dropoff_loc
+        +duration() float
+        +is_valid_for_model() bool
+    }
+    class Location {
+        +String location_id
+    }
+    class PassengerCount {
+        +int count
+    }
+    class Fare {
+        +float amount
+    }
+
+    TaxiTrip "1" *-- "2" Location : involves
+    TaxiTrip "1" --> "1" PassengerCount : carries
+    TaxiTrip "1" --> "1" Fare : generates
