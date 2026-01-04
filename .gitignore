@@ -217,3 +217,5 @@ models/*.bin
 # --- MLOps & Tracking ---
 mlflow.db
 mlruns/
+
+zoomcamb-prediction.ipynb
