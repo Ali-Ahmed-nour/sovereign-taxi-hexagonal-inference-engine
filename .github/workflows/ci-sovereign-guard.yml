@@ -1,0 +1,37 @@
+name: Sovereign Guard CI
+
+# التشغيل عند أي Push أو Pull Request لضمان سيادة الكود
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-assurance:
+    name: Industrial Quality Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install uv (2026 Standard)
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install Dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Run Ruff (Linter & Formatter)
+        run: uv run ruff check .
+
+      - name: Run Pyright (Static Type Checker)
+        run: uv run pyright .
+
+      - name: Run Sovereign Tests (Hypothesis PBT)
+        run: uv run pytest
