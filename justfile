@@ -20,7 +20,7 @@ md:
     @echo "All Markdown files are now sovereign and formatted."
 
 # 📚 Bundle all documentation into a single sovereign context file
-all-docs:
+all docs:
     @echo "Bundling documentation into all_docs.txt..."
     @find docs -name "*.md" -exec sh -c 'echo "========================================"; echo "FILE: {}"; echo "========================================"; cat {}; echo -e "\n\n"' \; > all_docs.txt
     @echo "Done! Context saved to all_docs.txt"
